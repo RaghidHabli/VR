@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <!--Your scene is where all your entities are present and rendered -->
+    <a-scene>
+      <!--  Here is where all your imported assets will be placed
+            to be used later on in your scene  -->
+      <a-assets>
+        <img
+          id="wood"
+          src="hhttps://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/wall.jpg?v=1644161745971"
+        />
+        <img
+          id="wood-nm"
+          src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/wall%20-nm.png?v=1644161746621"
+        />
+      <img id="road" src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/road.jpg?v=1645052732198">
+      <img id="road-nm" src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/Road%20NM.png?v=1645052732237">
+      <a-asset-item id="bldg2" src ="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/building.glb?v=1645044494663"></a-asset-item>
+      <a-asset-item id="car" src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/scene.gltf?v=1645046708895"></a-asset-item>
+      <a-asset-item id="lights" src="https://cdn.glitch.global/474c30d2-dd4c-4a77-8975-cdab3e4bced0/street%20light%20converted.glb?v=1644848251473"></a-asset-item>
+      <a-asset-item id="car2" src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/uploads_files_2792345_Koenigsegg.glb?v=1645051119353"></a-asset-item>
+      <a-assets-item id="hotel-glb" src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/Hotel(3star).glb?v=1645050343344"></a-assets-item>
+      <a-asset-item id="tree" src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/treee.glb?v=1645051899252"></a-asset-item>      
+      </a-assets>
+      
+      
+      
+      
+      <!-- Average height == Adult Eye level -->
+      <a-camera position="0 1.6 50"
+                active="true">
+      </a-camera>
+      <!-- Add side="back" attribute to see vehicle -->
+      <a-box
+        color="white"
+        position=" 0 4 -4.5"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/wall.jpg?v=1644161745971"
+        repeat="1 1"
+        normal-map="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/wall%20-nm.png?v=1644161746621"
+        normal-texture-repeat="1 1"
+        normal-scale="1 -1"
+        roughness="0.5"
+        width="25"
+        height="10"
+        depth="25"
+        side="back"
+      >
+      </a-box>
+         <a-box
+        color="white"
+        height="0.1"
+        width="2.4"
+        depth="2"
+        position="0 1.7 -3"
+        rotation="0 0 0"
+         src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/hood.PNG?v=1644166286381"    
+             
+      >
+      </a-box>
+      
+      
+         <a-box
+        color="white"
+        height="0.1"
+        width="2.5"
+        depth="0.7"
+        position="0 0.7 -2"
+        rotation="90 0 0"
+         src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/front-grill.PNG?v=1644166548564"    
+             
+      >
+      </a-box>
+      
+      
+      <a-box
+        color="black"
+        height="1.2"
+        width="2.6"
+        depth="3.3"
+        position="0 2.2 -5.3"
+        rotation="0 0 0"
+             
+             
+      >
+      <a-box
+        color="silver"
+        width="2.3"
+        height="1"
+        depth="0.1"
+        position="0 0 1.7"
+        rotation="0 0 0"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/windshield.PNG?v=1644164567136"
+      >
+
+      </a-box>
+      </a-box>
+      
+      <!-- Add side="back" attribute to see vehicle -->
+
+
+      <!-- Adding cars | Previous lecture (Position, Rotation, and Scaling) -->
+      <!-- Adding the body of the red car -->
+      <a-box
+        color="black"
+  
+        height="1.2"
+        width="2.6"
+        depth="5"
+       
+        position="0 1 -4.5"
+        rotation="0 0 0"
+   
+      >
+             <a-box
+    src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/g63-grill.PNG?v=1644164144908"
+        normal-map="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/g63-grill.PNG_specular%20(1).png?v=1644164146721"
+                    width="1.5"
+        height="0.5"
+        depth="0.1"
+        position=" 0 0.35 2.5"
+        rotation="0 0 0"
+
+      >
+        </a-box>
+              <!-- Adding the windshield | Parent Entity -->
+      <a-box
+        color="silver"
+        width="0.5"
+        height="0.5"
+        depth="0.1"
+        position="-1 0.35 2.5"
+        rotation="0 0 0"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/headlights.PNG?v=1644164413996"
+      >
+
+      </a-box>
+
+                      <!-- Adding the windshield | Parent Entity -->
+      <a-box
+        color="silver"
+        width="0.5"
+        height="0.5"
+        depth="0.1"
+        position="1 0.35 2.5"
+        rotation="0 0 0"
+src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/headlights.PNG?v=1644164413996"
+      >
+
+      </a-box>
+      </a-box>
+
+      <!-- Adding Front Left Wheel | Parent Entity -->
+      <a-cylinder
+        color="black"
+        radius="0.8"
+        side="double"
+        height="0.5"
+        position="-1.5 0 -3"
+        rotation="0 0 90"
+      >
+        <!-- Adding Frame | Child Entity -->
+        <a-circle
+          color="white"
+          radius="0.6"
+          side="double"
+          position="0 0.26 0"
+          rotation="90 0 260"
+          src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/rims2.png?v=1644167265890"
+        >
+        </a-circle>
+      </a-cylinder>
+
+      <!-- Adding Rear Left Wheel | Parent Entity -->
+      <a-cylinder
+        color="black"
+        radius="0.8"
+        side="double"
+        height="0.5"
+        position="-1.5 0 -6"
+        rotation="0 0 90"
+      >
+        <!-- Adding Frame | Child Entity -->
+        <a-circle
+          color="white"
+          radius="0.6"
+          side="double"
+          position="0 0.26 0"
+          rotation="90 0 260"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/rims2.png?v=1644167265890"
+        >
+        </a-circle>
+      </a-cylinder>
+
+      <!-- Adding Front Right Wheel | Parent Entity -->
+      <a-cylinder
+        color="black"
+        radius="0.8"
+        side="double"
+        height="0.5"
+        position="1.5 0 -3"
+        rotation="0 0 90"
+      >
+        <!-- Adding Frame | Child Entity -->
+        <a-circle
+          color="white"
+          radius="0.6"
+          side="double"
+          position="0 -0.26 0"
+          rotation="90 0 260"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/rims2.png?v=1644167265890"
+        >
+        </a-circle>
+      </a-cylinder>
+
+
+      <!-- Adding Front Right Wheel | Parent Entity -->
+      <a-cylinder
+        color="black"
+        radius="0.8"
+        side="double"
+        height="0.5"
+        position="1.5 0 -6"
+        rotation="0 0 90"
+      >
+        <!-- Adding Frame | Child Entity -->
+        <a-circle
+          color="white"
+          radius="0.6"
+          side="double"
+          position="0 -0.26 0"
+          rotation="90 0 260"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/rims2.png?v=1644167265890"
+        >
+        </a-circle>
+      </a-cylinder>
+      <a-cylinder
+        color="black"
+        radius="0.8"
+        side="double"
+        height="0.5"
+        position="0.25 1.4 -7"
+        rotation="0 90 90"
+      >
+        <a-circle
+          color="white"
+          radius="0.7"
+          side="double"
+          position="0 -0.29 0"
+          rotation="90 90 0"
+        src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/back.png?v=1644167932102"
+        >
+        </a-circle>
+    </a-cylinder>
+      
+      <a-box color="black" 
+             position="-1.5 1.7 -3.8"
+             width="0.4"
+             height="0.3"
+             depth="0.1"></a-box>
+      
+      <a-box color="black" 
+             position="1.5 1.7 -3.8"
+             width="0.4"
+             height="0.3"
+             depth="0.1"></a-box>
+      
+      
+      <a-plane position="0 -0.8 -6" rotation="-90 0 0" width="6" height="20" color="#5F021F"></a-plane>
+    <a-plane position="0 -2 -6" rotation="-90 0 0" width="300" height="300" 
+                    repeat="100 100"
+             src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/Ground-Urban_Texture_A_P2140743.jfif?v=1644168636416"></a-plane>
+      
+      
+      <a-sky         
+             radius="10000"
+             scale="0.02 0.02 0.02"
+              src="https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/street22.jpg?v=1645054824465">
+      </a-sky>
+      
+      
+   <a-plane position="-8 5 -16.7" 
+            width="7"
+            height="5"
+            color="grey"
+            src="https://cdn.glitch.global/6b8cfc28-dcd7-4c33-a3c3-d6c78f9d5510/logomb.png?v=1644170598638"></a-plane>
+    <a-curvedimage  rotation="0 0 0"
+                   position="7.3 4 -11.3"
+                   theta-length="120"
+                   theta-start="60"
+                   radius="0.6"
+                   height="0.4"
+                   scale="8 8 8"
+                   material=""
+                   geometry=""
+                  src="https://cdn.glitch.global/62ab945a-90bb-4768-830f-5a79c6732eab/tv1.png?v=1644925546526">
+    </a-curvedimage>
+      
+             <!--Blg 2 --> 
+          <a-entity gltf-model="#bldg2"
+                scale ="0.005 0.02 0.02"
+                rotation ="0 0 0"    
+                position = "-50 -2 -20"></a-entity>
+             <!--Blg 2 --> 
+          <a-entity gltf-model="#bldg2"
+                scale ="0.005 0.02 0.02"
+                rotation ="0 90 0"    
+                position = "-50 -2 70"></a-entity>
+             <!--Blg 2 --> 
+          <a-entity gltf-model="#bldg2"
+                scale ="0.005 0.02 0.02"
+                rotation ="0 90 0"    
+                position = "55 -2 70"></a-entity>
+      
+      
+          <a-entity gltf-model="#hotel-glb"
+          scale ="2 2 2"
+          rotation ="0 90 0"    
+          position = "5 -2 70"></a-entity>
+      
+      
+        <a-entity
+          obj-model="obj: https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/ferrari-laferrari.obj?v=1645045048170; mtl: https://cdn.glitch.global/e9fd4231-c4e6-4935-b984-3b737948f020/ferrari-laferrari.mtl?v=1645045042849"
+          rotation="0 180 0"
+          scale="0.5 0.5 0.5"
+          position="-35 0 22.3"
+          animation="property: position; 
+           to: 55 0 22.3; 
+           dur: 3000;
+           easing: linear; 
+           loop: true"
+        ></a-entity>
+      
+        <a-entity
+          gltf-model="#car2"
+          rotation="0 90 0"
+          scale="0.25 0.25 0.5"
+          position="-50 -1 37.3"
+          animation="property: position; 
+           to: 55 0 37.3; 
+           dur: 2000;
+           easing: linear; 
+           loop: true"
+        ></a-entity>   
+      
+<!-- street lights -->
+      <a-entity gltf-model="#lights"
+                scale = "0.15 0.15 0.15"
+                position= "18 -7 6"></a-entity>
+      <a-entity gltf-model="#lights"
+                scale = "0.15 0.15 0.15"
+                position= "5 -7 90"></a-entity>
+      
+      <a-entity gltf-model="#lights"
+                scale = "0.15 0.15 0.15"
+                position= "92 -7 60"></a-entity>
+      
+      <a-entity gltf-model="#lights"
+                scale = "0.15 0.15 0.15"
+                position= "-24 -7 57"></a-entity>
+      
+      <a-entity gltf-model="#lights"
+                scale = "0.15 0.15 0.15"
+                position= "24 -7 55"></a-entity>
+      
+      
+            <!-- Trees --> 
+       <a-entity gltf-model ="#tree"
+                 scale="0.04 0.04 0.04"
+                 position= "40 -1 -2.5"
+                 rotation="0 50 0 ">
+      </a-entity>
+      
+     <a-plane material="
+         src: #road;
+         repeat: 1 10;
+         normal-map: #road-nm;
+         normal-texture-repeat: 2 2"
+         position="-10 -1.7 30"
+         scale="30 500 1"
+         rotation="-90 90 0">
+      </a-plane>
+    </a-scene>
+
+    
+
+
+  </body>
+</html>
